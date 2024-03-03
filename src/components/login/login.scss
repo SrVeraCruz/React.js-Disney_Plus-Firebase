@@ -1,0 +1,84 @@
+.login {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+
+  .content {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    margin-bottom: 10rem;
+    padding: 5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .bg-image {
+      height: 100%;
+      width: 100%;
+      background-image: url("/images/login-background.jpg");
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      top:0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .cta { 
+      width: 100%;
+      max-width: 40rem;    
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 2rem auto;
+      text-align: center;
+      transition-timing-function: ease-out;
+      transition: opacity .2s;
+      
+      .cta-img {
+        width: 100%;
+        min-height: .1rem;
+        margin-bottom: .8rem;
+        
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      a {
+        font-weight: bold;
+        width: 100%;
+        color: #f9f9f9;
+        background-color: #0063e5;
+        letter-spacing: .1rem;
+        font-size: 1.2rem;
+        padding: 1.4rem 0;
+        margin-bottom: 1rem;
+        border-radius: .3rem;
+        border: .1rem solid transparent;
+        transition: .1s ease-in-out;
+
+        &:hover {
+          background-color: #0483ee;
+        }
+      }
+
+      p {
+        color: #f4f4f4ef;
+        font-size: .9rem;
+        letter-spacing: .05rem;
+        line-height: 1.4rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

@@ -1,13 +1,14 @@
 import "./app.scss"
+import Header from "./components/header/Header"
+import Login from "./components/login/Login"
 
 function App() {
 
   return (
-    <>
-      <div>
-        hello
-      </div>
-    </>
+    <div className="App">
+      <Header/>
+      <Login/>
+    </div>
   )
 }
 
