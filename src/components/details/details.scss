@@ -1,0 +1,164 @@
+@import "../../app.scss";
+
+.details {
+  position: relative;
+  overflow-x: hidden;
+  padding: 1.5rem;
+  display: block;
+
+  .backgroundImg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: .8;
+    z-index: -1;
+
+    img {
+      width: 100vw;
+      height: 100vh;  
+    }
+    @include tablet {
+      left: -33rem;
+      img {
+        width: initial;
+      }
+    }
+  }
+
+  .imgTitle {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 30vw;
+    min-height: 10rem;
+    margin: 0 auto;
+    padding-bottom: 1.5rem;
+    width: 100%;
+
+    img {
+      max-width: 37rem;
+      min-width: 15rem;
+      width: 35vw;
+    }
+  }
+
+  .contentMeta {
+    max-width: 80rem;
+
+    .controls {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-flow: row nowrap;
+      min-width: 3rem;
+      margin: 1.5rem 0;
+
+      @include tablet {
+        gap: .8rem;
+      }
+
+      .player {
+        font-size: .9rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        padding: 0 1.8rem;
+        height: 3.8rem;
+        border-radius: .3rem;
+        cursor: pointer;
+        justify-content: center;
+        letter-spacing: .1rem;
+        text-align: center;
+        border: none;
+        text-transform: uppercase;
+        color: black;
+        background: #f9f9f9;
+        transition: .1s ease-in-out;
+
+        @include tablet {
+          height: 3.3rem;
+          padding: 0 1rem;
+          font-size: .8rem;
+
+          img {
+            width: 1.7rem;
+          }
+        }
+
+        img {
+          height: 2rem;
+        }
+
+        &:hover {
+          background: #c6c6c6;
+        }
+      }
+
+      .trailer {
+        background: #00000059;
+        border: .1rem solid #f9f9f9;
+        color: #f9f9f9;
+      }
+
+      .addList {
+        position: relative;
+        height: 3.6rem;
+        width: 3.6rem;
+        margin-left: .5rem;
+        background: #00000088;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: .15rem solid #f9f9f9;
+        cursor: pointer;
+        transition: .1s ease-in-out;
+
+        &:hover {
+          background: #c6c6c6;
+        }
+        
+        span {
+          position: absolute;
+          background-color: #f9f9f9;
+          width: 1.3rem;
+          height: .17rem;
+
+          &:nth-child(2) {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      .groupWatch {
+        background: #000;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #f9f9f9;
+      min-height: 1.5rem;
+
+      @include tablet {
+        font-size: .9rem;
+      }
+    }
+
+    .description {
+      line-height: 1.4;
+      font-size: 1.4rem;
+      padding: 1rem 0;
+      color: #f9f9f9;
+
+      @include tablet {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

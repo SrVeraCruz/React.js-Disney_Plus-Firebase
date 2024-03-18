@@ -26,7 +26,7 @@ const Header = () => {
     if(userName) {
       auth.signOut()
         .then(() => {
-          dispatch(setSignOutState)
+          dispatch(setSignOutState())
           navigate("/")
         })
         .catch((err) => {alert(err.message)})
@@ -53,7 +53,7 @@ const Header = () => {
         <img src="/images/logo.svg" alt="logo" />
       </div>
 
-      {!userName 
+      {!userName
         ?<a href="#" className="btn" onClick={handleAuthGoogle} >LOGIN</a> 
         :<>
           <div className="nav-menu">

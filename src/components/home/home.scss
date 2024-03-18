@@ -1,0 +1,20 @@
+.home {
+   position: relative;
+   min-height: 100vh;
+   display: block;
+   overflow-x: hidden;
+   padding: 1.5rem 3.5rem;
+
+   &::after {
+    content: "";
+    position: absolute;
+    background-image: url("/images/home-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    inset: 0px;
+    opacity: 1;
+    z-index: -1;
+  }
+}
