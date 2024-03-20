@@ -1,6 +1,6 @@
 .home {
    position: relative;
-   min-height: 100vh;
+   min-height: calc(100vh - 5rem);
    display: block;
    overflow-x: hidden;
    padding: 1.5rem 3.5rem;

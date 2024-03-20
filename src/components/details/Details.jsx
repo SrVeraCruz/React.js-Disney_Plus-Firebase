@@ -3,27 +3,42 @@ import db from "../../Firebase"
 import { useParams } from "react-router-dom"
 import { useState } from "react";
 import { useEffect } from "react";
-import { ref, onValue } from "firebase/database";
+import { ref, onValue, get } from "firebase/database";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUserName } from "../../features/user/userSlice";
 
 const Details = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const userName = useSelector(selectUserName);
   const [detailsData,setDetailsData] = useState(null);
 
-  useEffect(() => {
+  useEffect(()=> {
+    if(!userName) {
+      navigate("/");
+    }
+  },[])
+
+  const fetchData = async () => {
     const moviesRef = ref(db,"movies");
-    onValue(moviesRef, (snapshot) => {
-      const datas = snapshot.val();
-      if (datas) {
-        const movie = Object.values(datas).find((data) => data.id == id);
-        if (movie) {
-          setDetailsData(movie);
-        } else {
-          console.log("Movie not found in database.");
-        }
+    const snapshot = await get(moviesRef);
+    const datas = snapshot.val();
+
+    if (datas) {
+      const movie = Object.values(datas).find((data) => data.id == id);
+      if (movie) {
+        setDetailsData(movie);
       } else {
-        console.log("No data available in database.");
+        console.log("Movie not found in database.");
       }
-    })
+    } else {
+      console.log("No data available in database.");
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
   }, [id])
 
   return (

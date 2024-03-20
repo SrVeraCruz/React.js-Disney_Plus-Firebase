@@ -2,17 +2,17 @@ import { auth, googleProvider } from "../../Firebase"
 import { signInWithPopup } from 'firebase/auth';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { selectUserName, selectUserPhoto, setSignOutState, setUserLoginDetails } from "../../features/user/userSlice";
 
 import "./header.scss"
-import { useEffect } from "react";
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userName = useSelector(selectUserName);
-  const userPhoto= useSelector(selectUserPhoto);
-
+  const userPhoto = useSelector(selectUserPhoto);
+  
   useEffect(() => {
     auth.onAuthStateChanged(async (user) =>{
       if(user) {
@@ -56,31 +56,33 @@ const Header = () => {
       {!userName
         ?<a href="#" className="btn" onClick={handleAuthGoogle} >LOGIN</a> 
         :<>
-          <div className="nav-menu">
-            <a href="/home">
-              <img src="/images/home-icon.svg" alt="HOME"/>
-              <span>HOME</span>
-            </a>
-            <a href="/search">
-              <img src="/images/search-icon.svg" alt="search"/>
-              <span>SEARCH</span>
-            </a>
-            <a href="/watchlist">
-              <img src="/images/watchlist-icon.svg" alt="watchlist"/>
-              <span>WATCHLIST</span>
-            </a>
-            <a href="/originals">
-              <img src="/images/original-icon.svg" alt="originals"/>
-              <span>ORIGINALS</span>
-            </a>
-            <a href="/movies">
-              <img src="/images/movie-icon.svg" alt="movies"/>
-              <span>MOVIES</span>
-            </a>
-            <a href="/series">
-              <img src="/images/series-icon.svg" alt="series"/>
-              <span>SERIES</span>
-            </a>
+          <div className="wrap">
+            <div className="nav-menu">
+              <a href="/home">
+                <img src="/images/home-icon.svg" alt="HOME"/>
+                <span>HOME</span>
+              </a>
+              <a href="/search">
+                <img src="/images/search-icon.svg" alt="search"/>
+                <span>SEARCH</span>
+              </a>
+              <a href="/watchlist">
+                <img src="/images/watchlist-icon.svg" alt="watchlist"/>
+                <span>WATCHLIST</span>
+              </a>
+              <a href="/originals">
+                <img src="/images/original-icon.svg" alt="originals"/>
+                <span>ORIGINALS</span>
+              </a>
+              <a href="/movies">
+                <img src="/images/movie-icon.svg" alt="movies"/>
+                <span>MOVIES</span>
+              </a>
+              <a href="/series">
+                <img src="/images/series-icon.svg" alt="series"/>
+                <span>SERIES</span>
+              </a>
+            </div>
           </div>
           <div className="signOut">
             <img src={userPhoto} alt={userName} className="userImg" />

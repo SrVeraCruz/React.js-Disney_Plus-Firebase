@@ -1,0 +1,16 @@
+.noPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 5rem);
+  color: rgba(108, 107, 108, 0.671);
+
+  p {
+    font-size: 3.5rem;
+    font-weight: 500;
+
+    span {
+      font-size: 1rem;
+    }
+  }
+}
