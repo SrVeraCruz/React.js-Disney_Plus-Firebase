@@ -50,6 +50,8 @@
     padding: 0;
     margin: 0 auto 0 0;
     overflow-y: auto;
+    border-right: .1rem solid #2e2e2e5c ;
+    border-left: .1rem solid #2e2e2e5c ;
 
     .nav-menu {
       display: flex;
@@ -58,6 +60,7 @@
       flex-flow: row nowrap;
       height: 100%;
       width: 100%;
+      margin: 0 .2rem;
       //justify-content: center;
       position: relative;
     
