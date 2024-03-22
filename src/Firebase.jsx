@@ -4,13 +4,13 @@ import { getStorage } from "firebase/storage"
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAyTt0F0or34xZ-0OEepKSK7v7kD2qhUVg",
-  authDomain: "veracine-plus.firebaseapp.com",
-  projectId: "veracine-plus",
-  storageBucket: "veracine-plus.appspot.com",
-  messagingSenderId: "808474494386",
-  appId: "1:808474494386:web:254ca8d0d1201bbe9e50ab",
-  measurementId: "G-7BG2CPB0CG"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID
 };
 
 const firebaseApp = initializeApp(firebaseConfig);

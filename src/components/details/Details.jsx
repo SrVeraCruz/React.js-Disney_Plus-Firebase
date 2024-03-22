@@ -3,7 +3,7 @@ import db from "../../Firebase"
 import { useParams } from "react-router-dom"
 import { useState } from "react";
 import { useEffect } from "react";
-import { ref, onValue, get } from "firebase/database";
+import { ref, get } from "firebase/database";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUserName } from "../../features/user/userSlice";
