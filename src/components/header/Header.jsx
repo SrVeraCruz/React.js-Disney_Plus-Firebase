@@ -1,5 +1,5 @@
 import { auth, googleProvider } from "../../Firebase"
-import { signInWithPopup } from 'firebase/auth';
+import { signInWithRedirect } from 'firebase/auth';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -31,7 +31,7 @@ const Header = () => {
         })
         .catch((err) => {alert(err.message)})
     } else if(!userName) {
-      await signInWithPopup(auth,googleProvider)
+      await signInWithRedirect(auth,googleProvider)
         .then((res) => {setUser(res.user)})
         .catch((err) => {alert(err.message)}) 
     }
@@ -58,27 +58,27 @@ const Header = () => {
         :<>
           <div className="wrap">
             <div className="nav-menu">
-              <a href="/home">
+              <a href="#">
                 <img src="/images/home-icon.svg" alt="HOME"/>
                 <span>HOME</span>
               </a>
-              <a href="/search">
+              <a href="#">
                 <img src="/images/search-icon.svg" alt="search"/>
                 <span>SEARCH</span>
               </a>
-              <a href="/watchlist">
+              <a href="#">
                 <img src="/images/watchlist-icon.svg" alt="watchlist"/>
                 <span>WATCHLIST</span>
               </a>
-              <a href="/originals">
+              <a href="#">
                 <img src="/images/original-icon.svg" alt="originals"/>
                 <span>ORIGINALS</span>
               </a>
-              <a href="/movies">
+              <a href="#">
                 <img src="/images/movie-icon.svg" alt="movies"/>
                 <span>MOVIES</span>
               </a>
-              <a href="/series">
+              <a href="#">
                 <img src="/images/series-icon.svg" alt="series"/>
                 <span>SERIES</span>
               </a>
